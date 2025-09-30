@@ -1,0 +1,36 @@
+#include <stdio.h>
+
+int main()
+{
+    int a,b,c,d;
+
+    printf("Give me two values and I will print the mathamatical operations using the 2 numbers]n");
+
+
+    inputf("%d %d %d %d", &a,&b, &c,&d)
+
+    printf("The Sum of B and C equals %d\n",b+c);
+    printf("A times D equals %d\n",a*d);
+
+    //a/c printed except for c==0
+    if(c!=0)
+        printf("A divided by C equals %d\n",a/c);
+    else
+        printf("ERROR: Cannot divide A by C becuase C equals 0. Program Conutining")
+
+    //c%d printed except for d==0, ha 
+    if(d!=0)
+        printf("C divided by D equals %d\n",c%d);
+    else
+        printf("ERROR: Cannot perform modulus of zero. Program Conuntining");
+
+    //(a*c)/(b+d) printed except for when b+d==0
+    if(b+c!=0)
+            printf("A times C divided by (B plus D) equals %d\n",a*c/(b+c));
+    else
+        printf("ERROR: Cannot divide A times C divided by (B plus D) becuase B plus D equals 0. Program Conutining")
+
+
+    printf("Thank you for using this program");
+    return 0;
+}
