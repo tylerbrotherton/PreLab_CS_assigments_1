@@ -1,0 +1,28 @@
+#include <stdio.h>
+
+int main(void)fd
+{
+	int num1=1;
+	for(int i=0;;i++)
+	{
+		printf(" %d\n",num1);
+		num1*=3;
+	}
+
+	char answer;
+	do{
+		printf("What has keys but can't unlock doors\n");
+		prinf("(a)A piano\n(b)A Map\n(c)A computer\n");
+		scanf("%c", &answer);
+	}while(answer!='c');
+
+	prinf("Give me a number, if it's even, add 50,
+               if odd, subtract 25\n");
+
+	scanf("%d", num1);
+	int num2=num1;	
+
+	(num1%2==0)?(num2+=50):(num2-=25);
+
+	prinf("Given number: %d --> Result: %d", num1, num2); 
+}
