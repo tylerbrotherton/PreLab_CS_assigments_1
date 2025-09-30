@@ -1,0 +1,28 @@
+#include <iostream>
+#include <limits>
+#include <cstdint>
+
+int main() {
+    int a{}, b{}, c{}, d{};
+
+    try {
+        // Optimized input with minimal overhead
+        if (!(std::cin >> a >> b >> c >> d)) {
+            throw std::runtime_error("Invalid input");
+        }
+
+        // Compile-time branch prediction and minimal branching
+        std::cout 
+            << "Sum (B+C): " << (b + c) << '\n'
+            << "Product (A*D): " << (a * d) << '\n'
+            << "A/C: " << (c ? a / c : throw std::domain_error("Division by zero")) << '\n'
+            << "C%D: " << (d ? c % d : throw std::domain_error("Modulus by zero")) << '\n'
+            << "Complex Calculation: " << ((b + d) ? static_cast<double>(a * c) / (b + d) : throw std::domain_error("Zero denominator")) << '\n';
+    }
+    catch (const std::exception& e) {
+        std::cerr << "Error: " << e.what() << std::endl;
+        return 1;
+    }
+
+    return 0;
+}
