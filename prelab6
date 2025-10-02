@@ -1,0 +1,66 @@
+#include <stdio.h>
+#include <math.h>
+#include <stdbool.h>
+
+
+
+int main() {
+    for(int i=0;i<100;i++){
+          if(isPrime(i))
+                printf("%d",i);
+    }
+
+    int num;
+    printf("Enter a natural positive even number:");
+     scanf("%d",num);
+     if(num>1 && num%1==0 && num1%2==0)
+      // checks for positive, non-decimal and even
+      //yes I know that all "int" are non-decimal
+      // but its part of the assigment
+      {
+            goldbachPrimesPairs(num);
+
+      }
+     else{
+            printf("That was not a natural positve even number");
+            return 1;
+        
+      }
+      return 0;
+}
+
+
+//IsPrime isn't my code, but an opitumal solution
+//but the orginial author is still at large
+bool isPrime(int n) {
+  
+    // Check if n is 1 or 0
+    if (n <= 1)
+        return false;
+
+    // Check if n is 2 or 3
+    if (n == 2 || n == 3)
+        return true;
+
+    // Check whether n is divisible by 2 or 3
+    if (n % 2 == 0 || n % 3 == 0)
+        return false;
+    
+    // Check from 5 to square root of n
+    // Iterate i by (i+6)
+    for (int i = 5; i <= sqrt(n); i = i + 6)
+        if (n % i == 0 || n % (i + 2) == 0)
+            return false;
+
+    return true;
+}
+
+//this is my codd
+void goldbachPrimesPairs(int n)
+{
+  for(int i=0;i<(n/2);i++){
+    if(isPrime(i)&&isPrime(n-i)){
+        printf("(%d,%d)", i, n-i);
+    }
+  }
+}
