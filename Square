@@ -1,0 +1,13 @@
+#include <stdio.h>
+
+#define y (x * x)
+
+int main(void)
+{
+    int x;
+    for (x = 1; x <= 10; x++)
+        printf("%d ", y);
+
+    printf("\n");
+    return 0;
+}
