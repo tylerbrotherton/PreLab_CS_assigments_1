@@ -1,6 +1,6 @@
 #include <stdio.h>
 
-#include "ExampleHeaderFile.h"
+//#include "ExampleHeaderFile.h"
 
 static int total_points_store(int op, int value);
 
