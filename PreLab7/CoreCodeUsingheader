@@ -1,0 +1,39 @@
+#include <stdio.h>
+
+#include "HeaderFileExample.h"
+
+
+int main(){
+    reset_day();
+    for(int i=0;i<2;i++){
+        int num=0;
+        printf("Enter purchase amount in cents: ");  
+        scanf(" %d", &num);
+
+        printf("Points earned : %d", compute_points() ); 
+        record_purchase(num);
+        printf("\nTotal Points : %d\n\n", get_total_points()); 
+    }
+
+    int input=0;    
+    if(get_total_points(10)>10){
+        printf("\nRedeem 10 points for a free drink?");
+        scanf(" %d",  &input);
+        if(1==input){//code like yoda, to prevent single = problems
+                  redeem_reward(10);
+                  printf("Reward redeemed! remaining points: %d", get_total_points());
+        
+                  
+        }
+        else if(0==input)
+            printf("Reward not redeemed! remaining points: %d", get_total_points());
+        else
+             printf("Error input unrecoginzed: Reward not redeemed! remaining points: %d", get_total_points());
+     }
+
+     printf("\n\nBonus day! multiplier = ");
+     scanf(" %d",  &input);
+     bonus_points_day(input);
+     printf("Total after bonus %d",get_total_points());
+
+}
