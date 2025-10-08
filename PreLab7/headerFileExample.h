@@ -1,8 +1,8 @@
-int reset_day(void)
-int record_purchase(int cents)
-int compute_points(int cents)
-int get_total_points(void)
-int redeem_reward(void)
+int reset_day(void);
+int record_purchase(int cents);
+int compute_points(int cents);
+int get_total_points(void);
+int redeem_reward(void);
 
 int points;//global variable, unfortantely
 
