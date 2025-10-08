@@ -11,10 +11,10 @@ int main(){
         printf("Enter purchase amount in cents: ");  
         scanf(" %d", num);
 
-        total_points_store(2,num);//stores user input in points store, and applies the safety gaurd
+        total_points_store(2,(num/100));//stores user input in points store, and applies the safety gaurd
                                 // in case the user mis-inputs a negitive sign.
 
-        printf("Points earned", compute_points(total_points_store(0,0)) ); 
+        printf("Points earned", (num/100) ); 
         printf("Total Points", total_points_store(0,0) ); 
     }
 
