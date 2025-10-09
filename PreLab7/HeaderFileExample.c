@@ -1,5 +1,7 @@
 #include "HeaderFileExamples.h"
 
+static int points;
+
 //RESETS POINTS
 int reset_day(void){
       points=0;//sorry, you get your point wiped
@@ -37,7 +39,7 @@ int redeem_reward(int points_needed){
       return 5;
 }
 
-int bouns_points_day(int multiplier){
+int bonus_points_day(int multiplier){
     points *= multiplier;
     return points;
 }
