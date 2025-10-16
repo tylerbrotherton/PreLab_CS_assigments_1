@@ -17,7 +17,7 @@ int main(){
     int values[ARRAY_SIZE]={0};
 
     foreach(int *i, values) {
-        *i = (i - values) + 1;
+        *i = (*i - values) + 1;
     }    
 
     {   
@@ -26,6 +26,6 @@ int main(){
             sum+=*i;
         }
         printf("the total is %d\n", sum );
-        printf("The Average is %d\n", (sum*1.0)/ARRAY_SIZE)
+        printf("The Average is %d\n", (sum*1.0)/ARRAY_SIZE);
     }
 }
