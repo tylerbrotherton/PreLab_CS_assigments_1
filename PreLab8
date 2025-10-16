@@ -1,0 +1,31 @@
+#include <stdio.h>
+
+//marco foreach loop
+#define foreach(item, array) \
+    for(int keep = 1, \
+            count = 0,\
+            size = sizeof (array) / sizeof *(array); \
+        keep && count != size; \
+        keep = !keep, count++) \
+    for(item = (array) + count; keep; keep = !keep)
+
+
+#define ARRAY_SIZE 20
+
+
+int main(){
+    int values[ARRAY_SIZE]={0};
+
+    foreach(int *i, values) {
+        *i = (i - values) + 1;
+    }    
+
+    {   
+        int sum=0;
+        foreach(int *i, values){
+            sum+=*i;
+        }
+        printf("the total is %d\n", sum );
+        printf("The Average is %d\n", (sum*1.0)/ARRAY_SIZE)
+    }
+}
