@@ -1,9 +1,9 @@
 #include <stdio.h>
 
 //marco foreach loop
-#define foreach(_type,_var,_arr)
+#define foreach(_type,_var,_arr, _elem_count)
     _type *_var= _var; \
-    for(int _c, = 0; _c <_elem_count; _c++, (_var= _arr+_c))
+    for(struct{int *_i, int _c} <_elem_count_; _c++, (_var= _arr+_c))   
 
 
 #define ARRAY_SIZE 20
@@ -12,7 +12,7 @@
 int main(){
     int values[ARRAY_SIZE]={0};
 
-    foreach(int *i, values) {
+    foreach(int, int *i, values, ARRAY_SIZE) {
         *i = (*i - values) + 1;
     }    
 
